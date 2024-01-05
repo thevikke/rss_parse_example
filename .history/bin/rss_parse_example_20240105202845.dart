@@ -1,25 +1,7 @@
 import 'package:http/http.dart';
 import 'package:rss_dart/dart_rss.dart';
 
-void main(List<String> arguments) {
-  Client client = Client();
-  getRssFeed(client).then((value) {
-    List<Information> informationList = parseRSS(value);
-    printInformationList(informationList);
-  });
-}
-
-void printInformationList(List<Information> informationList) {
-  print('--- Information List ---');
-  for (var information in informationList) {
-    print('Date: ${information.date}');
-    print('Title: ${information.title}');
-    print('Text: ${information.text}');
-    print('Image URL: ${information.imageUrl ?? 'N/A'}');
-    print('Link: ${information.link ?? 'N/A'}');
-    print('------------------------');
-  }
-}
+void main(List<String> arguments) {}
 
 Future<RssFeed> getRssFeed(Client client) async {
   Response response = Response('', 200);
